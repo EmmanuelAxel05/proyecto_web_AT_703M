@@ -1,344 +1,403 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
+import { ArrowLeft, Users, ChevronDown, ExternalLink, Play } from "lucide-react"
+import { useRouter } from "next/navigation"
 
-export default function ConceptosPage() {
+function ContentSection({ 
+  title, 
+  children, 
+  image, 
+  imagePosition = "left",
+  index 
+}: { 
+  title: string
+  children: React.ReactNode
+  image: string
+  imagePosition?: "left" | "right"
+  index: number
+}) {
+  const [imageLoaded, setImageLoaded] = useState(false)
+  const [isVisible, setIsVisible] = useState(false)
+
+  useEffect(() => {
+    const timer = setTimeout(() => setIsVisible(true), index * 100)
+    return () => clearTimeout(timer)
+  }, [index])
+
+  const imageElement = (
+    <div className="relative rounded-2xl overflow-hidden shadow-xl group">
+      {!imageLoaded && (
+        <div className="absolute inset-0 shimmer aspect-[4/3]" />
+      )}
+      <img 
+        src={image} 
+        alt={title}
+        onLoad={() => setImageLoaded(true)}
+        className={`w-full aspect-[4/3] object-cover transition-all duration-700 group-hover:scale-105 ${
+          imageLoaded ? "opacity-100" : "opacity-0"
+        }`}
+      />
+    </div>
+  )
+
+  const contentElement = (
+    <Card className="p-8 md:p-10 glow-card h-full">
+      <h2 className="text-2xl md:text-3xl font-bold mb-6 text-balance">{title}</h2>
+      <div className="text-muted-foreground leading-relaxed space-y-4">
+        {children}
+      </div>
+    </Card>
+  )
+
+  return (
+    <div 
+      className={`grid md:grid-cols-2 gap-8 items-stretch transition-all duration-700 ${
+        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+      }`}
+    >
+      {imagePosition === "left" ? (
+        <>
+          {imageElement}
+          {contentElement}
+        </>
+      ) : (
+        <>
+          {contentElement}
+          {imageElement}
+        </>
+      )}
+    </div>
+  )
+}
+
+export default function LiderazgoPage() {
+  const router = useRouter()
   const [showRefs, setShowRefs] = useState(false)
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
   return (
     <>
-      {/* ================= NAVBAR ================= */}
       <Navbar />
 
       <main className="bg-background">
 
+        {/* HERO */}
+        <section className="relative min-h-[60vh] flex items-center justify-center text-center overflow-hidden">
+          <div className="absolute inset-0">
+            <img
+              src="/liderazg.jpg"
+              alt="Liderazgo Transformacional"
+              className="w-full h-full object-cover opacity-10"
+            />
+            <div className="absolute inset-0 bg-gradient-to-b from-background via-background/80 to-background" />
+          </div>
 
-        {/* ================================================= */}
-        {/* HERO CON IMAGEN + TEXTO ORIGINAL (COMO PEDISTE) */}
-        {/* ================================================= */}
-        <section className="relative min-h-[70vh] flex items-center justify-center text-center overflow-hidden bg-gradient-to-b from-muted/30 to-background">
+          <div className="relative z-10 max-w-5xl mx-auto px-6 py-32 space-y-6">
+            <Button
+              variant="outline"
+              onClick={() => router.back()}
+              className={`group hover:border-primary hover:text-primary transition-all duration-500 ${
+                mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+              }`}
+            >
+              <ArrowLeft className="mr-2 h-4 w-4 group-hover:-translate-x-1 transition-transform" />
+              Volver
+            </Button>
 
-          {/* Imagen de fondo */}
-          <img
-            src="/liderazg.jpg"
-            alt="Administración del tiempo"
-            className="absolute inset-0 w-full h-full object-cover opacity-20"
-          />
-
-          {/* Contenido */}
-          <div className="relative z-10 max-w-5xl mx-auto px-6 space-y-4">
-
-            {/* Unidad 1 normal */}
-            <p className="text-xl tracking-wide text-muted-foreground">
+            <div 
+              className={`inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 text-accent text-sm font-medium transition-all duration-500 delay-100 ${
+                mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+              }`}
+            >
+              <Users className="w-4 h-4" />
               Unidad 2
-            </p>
+            </div>
 
-            {/* Título en negritas */}
-            <h1 className="text-6xl md:text-7xl font-bold tracking-tight">
-               Liderazgo Transformacional
+            <h1 
+              className={`text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-balance transition-all duration-500 delay-200 ${
+                mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+              }`}
+            >
+              Liderazgo{" "}
+              <span className="text-primary">Transformacional</span>
             </h1>
 
-            {/* Universidad */}
-            <p className="text-muted-foreground">
-              Universidad Tecnológica de Nezahualcóyotl
+            <p 
+              className={`text-muted-foreground transition-all duration-500 delay-300 ${
+                mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+              }`}
+            >
+              Universidad Tecnologica de Nezahualcoyotl
             </p>
 
-            {/* Integrantes */}
-            <p className="text-sm text-muted-foreground">
-              Cervantes Melgarejo Daniela · García Pérez Marco Antonio · Pérez Sandoval Israel Adán · Romero Guerrero Estrella · Valencia Ruíz Mitzi Lizeth
+            <p 
+              className={`text-sm text-muted-foreground transition-all duration-500 delay-400 ${
+                mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+              }`}
+            >
+              Cervantes Melgarejo Daniela | Garcia Perez Marco Antonio | Perez Sandoval Israel Adan | Romero Guerrero Estrella | Valencia Ruiz Mitzi Lizeth
             </p>
           </div>
         </section>
 
+        {/* CONTENIDO */}
+        <section className="py-24">
+          <div className="max-w-7xl mx-auto px-6 lg:px-8 space-y-20">
 
+            <ContentSection 
+              title="Introduccion" 
+              image="/Introduccion.jpg"
+              imagePosition="left"
+              index={0}
+            >
+              <p>
+                El liderazgo es una de las habilidades mas importantes dentro de un grupo, ya que influye directamente en la forma en que las personas trabajan, se comunican y alcanzan objetivos.
+              </p>
+            </ContentSection>
 
-        {/* ================= CONTENIDO ================= */}
-        <section className="py-32">
-          <div className="max-w-7xl mx-auto px-6 lg:px-8 space-y-28">
+            <ContentSection 
+              title="Estilos de Liderazgo" 
+              image="/estilos.jpg"
+              imagePosition="right"
+              index={1}
+            >
+              <ul className="space-y-3 text-sm">
+                <li><strong className="text-foreground">Liderazgo Autocratico:</strong> El lider toma todas las decisiones sin consultar al equipo, ejerciendo un control estricto.</li>
+                <li><strong className="text-foreground">Liderazgo Democratico:</strong> El lider fomenta la participacion del equipo, escucha opiniones y toma decisiones considerando las ideas de los demas.</li>
+                <li><strong className="text-foreground">Liderazgo Transaccional:</strong> Modelo basado en el intercambio entre lider y seguidor, utilizando recompensas y sanciones.</li>
+                <li><strong className="text-foreground">Liderazgo Laissez-Faire:</strong> Los lideres permiten a sus seguidores autonomia para tomar sus propias decisiones.</li>
+                <li><strong className="text-foreground">Liderazgo Situacional:</strong> Se adapta su estilo segun el nivel de competencia y motivacion de cada colaborador.</li>
+                <li><strong className="text-foreground">Liderazgo Transformacional:</strong> Inspira y motiva a las personas para lograr cambios positivos y crecimiento.</li>
+              </ul>
+            </ContentSection>
 
+            <ContentSection 
+              title="Diferencia entre Lider y Jefe" 
+              image="/lidyjefe.jpg"
+              imagePosition="left"
+              index={2}
+            >
+              <div className="grid sm:grid-cols-2 gap-4">
+                <div className="p-4 rounded-xl bg-primary/5 border border-primary/10">
+                  <p className="font-bold text-foreground mb-2">Lider</p>
+                  <p className="text-sm">Guia y motiva a su equipo</p>
+                </div>
+                <div className="p-4 rounded-xl bg-muted/50 border border-border">
+                  <p className="font-bold text-foreground mb-2">Jefe</p>
+                  <p className="text-sm">Ordena y controla usando su autoridad</p>
+                </div>
+              </div>
+            </ContentSection>
 
-            {/* Introduccion */}
-            <div className="grid md:grid-cols-2 gap-10 items-center">
-              <img src="/Introduccion.jpg" className="rounded-2xl shadow-xl" />
+            <ContentSection 
+              title="Habilidades de un Lider Transformacional" 
+              image="/habilidades.jpg"
+              imagePosition="right"
+              index={3}
+            >
+              <ul className="space-y-2">
+                <li className="flex items-start gap-2">
+                  <span className="w-2 h-2 rounded-full bg-primary mt-2 shrink-0" />
+                  <span>Inspirar y motivar a las personas para lograr cambios positivos.</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="w-2 h-2 rounded-full bg-primary mt-2 shrink-0" />
+                  <span>Enfocarse en las fortalezas de cada integrante del equipo.</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="w-2 h-2 rounded-full bg-primary mt-2 shrink-0" />
+                  <span>Crear una vision clara que oriente a todos hacia un mismo objetivo.</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="w-2 h-2 rounded-full bg-primary mt-2 shrink-0" />
+                  <span>Impulsar el crecimiento personal y profesional del equipo.</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="w-2 h-2 rounded-full bg-primary mt-2 shrink-0" />
+                  <span>Fomentar la innovacion, impulsando nuevas ideas y soluciones.</span>
+                </li>
+              </ul>
+            </ContentSection>
 
-              <Card className="p-10 glow-card">
-                <h2 className="text-4xl font-bold mb-6">
-                  Introducción
-                </h2>
-                <p>
-                 El liderazgo es una de las habilidades más importantes dentro de un grupo, ya que influye directamente en la forma en que las personas trabajan, se comunican y alcanzan objetivos.
-                </p>
-              </Card>
-            </div>
-
-
-
-            {/* Estilos */}
-            <div className="grid md:grid-cols-2 gap-10 items-center">
-              <Card className="p-10 glow-card">
-                <h2 className="text-4xl font-bold mb-6">
-                  Estilos de Liderazgo
-                </h2>
-
-                <ul className="list-disc ml-5 space-y-2">
-                  <li><strong>Liderazgo Autocrático:</strong> Es un estilo en el que el líder toma todas las decisiones sin consultar al equipo, ejerciendo un control estricto sobre las actividades y procesos.</li>
-                  <li><strong>Liderazgo Democrático:</strong> Es un estilo de liderazgo en el que el líder fomenta la participación del equipo, escucha opiniones y toma decisiones considerando las ideas de los demás, aunque la decisión final sigue siendo del líder.</li>
-                  <li><strong>Liderazgo Transaccional:</strong> El liderazgo transaccional es un modelo de gestión basado en el intercambio (transacción) entre líder y seguidor, donde se utilizan recompensas y sanciones para motivar el cumplimiento de objetivos claros, estructurados y a corto plazo.</li>
-                  <li><strong>Liderazgo Laissez-Faire:</strong> Los líderes permiten a sus seguidores la autonomía para tomar sus propias decisiones y gestionar sus propios equipos.</li>
-                  <li><strong>Liderazgo Situacional:</strong> En este se adapta su estilo según el nivel de competencia y motivación de cada colaborador.</li>
-                  <li><strong>Liderazgo Transformacional:</strong> Es un estilo de liderazgo que inspira y motiva a las personas para lograr cambios positivos, fomentar la innovación y crecer tanto personal como profesionalmente.</li>
+            <ContentSection 
+              title="Generar Cultura de Innovacion Continua" 
+              image="/culturadeinov.jpg"
+              imagePosition="left"
+              index={4}
+            >
+              <p>
+                Generar una cultura de innovacion continua consiste en fomentar un ambiente donde las personas propongan ideas nuevas, mejoren procesos y se adapten al cambio de forma constante.
+              </p>
+              <div className="mt-4 p-4 rounded-xl bg-primary/5 border border-primary/10">
+                <p className="font-semibold text-foreground mb-2">Claves para lograrlo:</p>
+                <ul className="text-sm space-y-1">
+                  <li>- Mentalidad abierta al cambio</li>
+                  <li>- Participacion de todos</li>
+                  <li>- Aprendizaje continuo</li>
+                  <li>- Aprender del error</li>
+                  <li>- Comunicacion abierta</li>
+                  <li>- Reconocer la innovacion</li>
                 </ul>
-              </Card>
+              </div>
+            </ContentSection>
 
-              <img src="/estilos.jpg" className="rounded-2xl shadow-xl" />
-            </div>
+            <ContentSection 
+              title="Enfoque en Fortalezas" 
+              image="/enfoque.jpg"
+              imagePosition="right"
+              index={5}
+            >
+              <p>
+                El enfoque en fortalezas consiste en identificar y potenciar las habilidades, talentos y conocimientos de cada persona para impulsar la innovacion continua.
+              </p>
+              <p className="mt-4">
+                Cuando se aprovechan las fortalezas individuales y del equipo, se generan mejores ideas, mayor creatividad y soluciones mas efectivas.
+              </p>
+            </ContentSection>
 
+            <ContentSection 
+              title="Construccion de una Cultura de Colaboracion y Servicio" 
+              image="/construccion.jpg"
+              imagePosition="left"
+              index={6}
+            >
+              <p>
+                La construccion de una cultura de colaboracion y servicio consiste en fomentar el trabajo en equipo, la ayuda mutua y la orientacion hacia apoyar a los demas.
+              </p>
+              <div className="grid sm:grid-cols-2 gap-4 mt-4">
+                <div className="p-4 rounded-xl bg-primary/5 border border-primary/10">
+                  <p className="font-semibold text-foreground mb-2">Por que es importante?</p>
+                  <ul className="text-sm space-y-1">
+                    <li>- Mejora la convivencia</li>
+                    <li>- Fomenta el respeto</li>
+                    <li>- Reduce conflictos</li>
+                    <li>- Forma personas integras</li>
+                  </ul>
+                </div>
+                <div className="p-4 rounded-xl bg-accent/5 border border-accent/10">
+                  <p className="font-semibold text-foreground mb-2">Como fomentarla?</p>
+                  <ul className="text-sm space-y-1">
+                    <li>- Ejemplo desde lideres</li>
+                    <li>- Respetar normas</li>
+                    <li>- Trabajo en equipo</li>
+                    <li>- Dialogo y empatia</li>
+                  </ul>
+                </div>
+              </div>
+            </ContentSection>
 
+            <ContentSection 
+              title="Rejilla Administrativa" 
+              image="/interesytareas.png"
+              imagePosition="right"
+              index={7}
+            >
+              <p>
+                La rejilla administrativa, tambien llamada malla gerencial, es un modelo desarrollado por Robert Blake y Jane Mouton que evalua estilos de liderazgo en una cuadricula de 9x9.
+              </p>
+              <ul className="space-y-2 mt-4 text-sm">
+                <li><strong className="text-foreground">1,1 Administracion empobrecida:</strong> minimo esfuerzo.</li>
+                <li><strong className="text-foreground">9,1 Administracion autocratica:</strong> alta produccion, baja en personas.</li>
+                <li><strong className="text-foreground">1,9 Club campestre:</strong> alta en personas, baja en produccion.</li>
+                <li><strong className="text-foreground">5,5 Mitad de camino:</strong> equilibrio moderado.</li>
+                <li><strong className="text-foreground">9,9 Estilo de equipo (ideal):</strong> alta en ambas dimensiones.</li>
+              </ul>
+            </ContentSection>
 
-            {/* Diferencia */}
-            <div className="grid md:grid-cols-2 gap-10 items-center">
-              <img src="/lidyjefe.jpg" className="rounded-2xl shadow-xl" />
-
-              <Card className="p-10 glow-card">
-                <h2 className="text-4xl font-bold mb-6">
-                  Diferencia entre Líder y Jefe
-                </h2>
-
-                <p>
-                  Un líder guía y motiva a su equipo <br /><br />
-                  Un jefe ordena y controla usando su autoridad.
-                </p>
-              </Card>
-            </div>
-
-
-
-            {/* Habilidades */}
-            <div className="grid md:grid-cols-2 gap-10 items-center">
-              <Card className="p-10 glow-card">
-                <h2 className="text-4xl font-bold mb-6">
-                  Habilidades de un Líder Transformacional
-                </h2>
-                <ul>
-                  <li><strong>• </strong>Inspirar y motivar a las personas para lograr cambios positivos.</li>
-                  <li><strong>• </strong>Enfocarse en las fortalezas de cada integrante del equipo.</li>
-                  <li><strong>• </strong>Crear una visión clara que oriente a todos hacia un mismo objetivo.</li>
-                  <li><strong>• </strong>Impulsar el crecimiento personal y profesional del equipo.</li>
-                  <li><strong>• </strong>Fomentar la innovación, impulsando nuevas ideas y soluciones.</li>
+            <ContentSection 
+              title="Empowerment" 
+              image="/empowerment.png"
+              imagePosition="left"
+              index={8}
+            >
+              <p>
+                El empowerment es una tecnica o estrategia utilizada en las organizaciones para dar poder a los empleados, haciendolos sentir motivados mediante la delegacion de autonomia y responsabilidad.
+              </p>
+              <div className="mt-4 p-4 rounded-xl bg-primary/5 border border-primary/10">
+                <p className="font-semibold text-foreground mb-2">Sus beneficios:</p>
+                <ul className="text-sm space-y-1">
+                  <li>- Desarrollo de la confianza en uno mismo</li>
+                  <li>- Capacidad para tomar decisiones</li>
+                  <li>- Autonomia y responsabilidad personal</li>
+                  <li>- Participacion activa en la sociedad</li>
+                  <li>- Uso de habilidades para lograr metas</li>
                 </ul>
-              </Card>
-
-              <img src="/habilidades.jpg" className="rounded-2xl shadow-xl" />
-            </div>
-
-
-
-            {/* generar cultura */}
-            <div className="grid md:grid-cols-2 gap-10 items-center">
-              <img src="/culturadeinov.jpg" className="rounded-2xl shadow-xl" />
-
-              <Card className="p-10 glow-card">
-                <h2 className="text-4xl font-bold mb-6">
-                  Generar Cultura de Innovación Continua
-                </h2>
-
-                <p>
-                  Generar una cultura de innovación continua consiste en fomentar un ambiente donde las personas propongan ideas nuevas, mejoren procesos y se adapten al cambio de forma constante.
-                  No se trata solo de innovar una vez, sino de hacerlo todo el tiempo, aprendiendo de los errores y buscando siempre mejores soluciones.
-                  <br /><br />
-                  Claves para lograrlo:
-                  <ul className="list-disc ml-5 space-y-2">
-                  <li><strong>Mentalidad abierta al cambio:</strong> aceptar nuevas ideas y formas de trabajar.</li>
-                  <li><strong>Participación de todos:</strong> cualquier persona puede proponer mejoras.</li>
-                  <li><strong>Aprendizaje continuo:</strong> capacitarse y actualizarse constantemente.</li>
-                  <li><strong>Aprender del error:</strong> los errores se ven como oportunidades de mejora.</li>
-                  <li><strong>Comunicación abierta:</strong> compartir ideas sin miedo.</li>
-                  <li><strong>Reconocer la innovación:</strong> valorar y motivar las propuestas creativas.</li>
-                  </ul>
-                </p>
-              </Card>
-            </div>
-
-             {/* enfoque */}
-            <div className="grid md:grid-cols-2 gap-10 items-center">
-              <Card className="p-10 glow-card">
-                <h2 className="text-4xl font-bold mb-6">
-                  Enfoque en Fortalezas
-                </h2>
-
-                <p>
-                <strong>El enfoque en fortalezas consiste en identificar y potenciar las habilidades, talentos y conocimientos de cada persona para impulsar la innovación continua.
-                        Cuando se aprovechan las fortalezas individuales y del equipo, se generan mejores ideas, mayor creatividad y soluciones más efectivas. </strong>
-                </p>
-              </Card>
-
-              <img src="/enfoque.jpg" className="rounded-2xl shadow-xl" />
-            </div>
-
-
-            {/* Construcción de una Cultura */}
-            <div className="grid md:grid-cols-2 gap-10 items-center">
-              <img src="/construccion.jpg" className="rounded-2xl shadow-xl" />
-
-              <Card className="p-10 glow-card">
-                <h2 className="text-4xl font-bold mb-6">
-                  Construcción de una Cultura de Colaboración y Servicio
-                </h2>
-
-                <p>
-                  La construcción de una cultura de colaboración y servicio consiste en fomentar el trabajo en equipo, la ayuda mutua y la orientación hacia apoyar a los demás.
-                  Implica que las personas compartan conocimientos, se comuniquen de manera abierta y trabajen juntas para lograr objetivos comunes, siempre con una actitud de servicio.
-                  <br /><br />
-                  <strong>Crear Cultura de Valores</strong><br />
-                  Conjunto de principios que guían la conducta y la convivencia. <br /><br />
-                  <strong>¿Por qué es importante?</strong>
-                  <ul className="list-disc ml-5 space-y-2">
-                  <li>Mejora la convivencia.</li>
-                  <li>Fomenta el respeto.</li>
-                  <li>Reduce conflictos.</li>
-                  <li>Forma personas íntegras.</li>
-                  </ul> <br />
-                  <strong>¿Cómo fomentar una cultura de valores?</strong>
-                  <ul className="list-disc ml-5 space-y-2">
-                  <li>Promover el ejemplo desde líderes, docentes o autoridades.</li>
-                  <li>Respetar normas.</li>
-                  <li>Trabajo en equipo.</li>
-                  <li>Diálogo y empatía.</li>
-                  <li>Reconocer buenas acciones.</li>
-                  </ul>
-                </p>
-              </Card>
-            </div>
-
-             {/* Rejilla Administrativa */}
-            <div className="grid md:grid-cols-2 gap-10 items-center">
-              <Card className="p-10 glow-card">
-                <h2 className="text-4xl font-bold mb-6">
-                  Rejilla Administrativa
-                </h2>
-                <p>
-                  La rejilla administrativa, también llamada malla gerencial, es un modelo desarrollado por Robert Blake y Jane Mouton que evalúa estilos de liderazgo en una cuadrícula de 9x9, basándose en dos dimensiones:
-                  <br /><br />
-                  <strong>Interés por la producción (eje X).</strong><br />
-                  <strong>Interés por las personas (eje Y).</strong><br />
-                  <br />
-                  <strong>Principales estilos de la rejilla (1-9):</strong>
-                  <ul className="list-disc ml-5 space-y-2">
-                  <li><strong>1,1 Administración empobrecida:</strong> mínimo esfuerzo, busca evitar problemas y mantener el puesto.</li>
-                  <li><strong>9,1 Administración autocrática de tareas: </strong>alta prioridad en producción, baja en personas (liderazgo autocrático).</li>
-                  <li><strong>1,9 Administración de club campestre: </strong>alta prioridad en personas, baja en producción (enfocado en un ambiente cómodo).</li>
-                  <li><strong>5,5 Mitad de camino: </strong>equilibrio moderado sin maximizar ninguna de las dos áreas.</li>
-                  <li><strong>9,9 Estilo de equipo (ideal): </strong>alta preocupación tanto por la producción como por las personas, fomenta el compromiso y la confianza.</li>
-                  </ul>
-                </p>
-              </Card>
-
-              <img src="/interesytareas.png" className="rounded-2xl shadow-xl" />
-            </div>
-
-            {/* Empowerment */}
-            <div className="grid md:grid-cols-2 gap-10 items-center">
-              <img src="/empowerment.png" className="rounded-2xl shadow-xl" />
-
-              <Card className="p-10 glow-card">
-                <h2 className="text-4xl font-bold mb-6">
-                  Empowerment
-                </h2>
-
-                <p>
-                  El empowerment es una técnica, herramienta o estrategia utilizada en las organizaciones para dar poder a los empleados, haciéndolos sentir motivados mediante la delegación de autonomía y responsabilidad.
-                  <br /><br />
-                  <strong>Sus beneficios:</strong><br />
-                  
-                  <ul className="list-disc ml-5 space-y-2">
-                  <li>Desarrollo de la confianza en uno mismo.</li>
-                  <li>Capacidad para tomar decisiones.</li>
-                  <li>Autonomía y responsabilidad personal.</li>
-                  <li>Participación activa en la sociedad.</li>
-                  <li>Uso de habilidades para lograr metas.</li>
-                  </ul>
-                  <br />
-                  El empowerment permite a las personas creer en sí mismas y transformar su realidad.
-                </p>
-              </Card>
-            </div>
+              </div>
+              <p className="mt-4 text-sm italic">
+                El empowerment permite a las personas creer en si mismas y transformar su realidad.
+              </p>
+            </ContentSection>
 
             {/* VIDEO */}
-            <section className="text-center space-y-6">
-              <h2 className="text-4xl font-bold">Video explicativo</h2>
+            <section className="text-center space-y-8">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium">
+                <Play className="w-4 h-4" />
+                Video Explicativo
+              </div>
+              
+              <h2 className="text-3xl md:text-4xl font-bold">Aprende visualmente</h2>
 
-              <div className="aspect-video max-w-4xl mx-auto">
+              <div className="aspect-video max-w-4xl mx-auto rounded-2xl overflow-hidden shadow-2xl shadow-primary/10">
                 <iframe
-                  className="w-full h-full rounded-2xl shadow-xl"
+                  className="w-full h-full"
                   src="https://www.youtube.com/embed/w7NokCYHmik"
                   allowFullScreen
+                  title="Video explicativo sobre liderazgo transformacional"
                 />
               </div>
             </section>
 
-          {/* REFERENCIAS */}
+            {/* REFERENCIAS */}
             <section className="space-y-6">
               <div className="text-center">
                 <Button
                   onClick={() => setShowRefs(!showRefs)}
-                  className="bg-[#019f60] hover:bg-[#018a54]"
+                  className="bg-primary hover:bg-primary/90 text-primary-foreground gap-2"
                 >
+                  <ExternalLink className="w-4 h-4" />
                   {showRefs ? "Ocultar referencias" : "Mostrar referencias"}
+                  <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${showRefs ? "rotate-180" : ""}`} />
                 </Button>
               </div>
 
-              {showRefs && (
-                <Card className="p-8 glow-card text-sm text-left space-y-4">
-
+              <div className={`overflow-hidden transition-all duration-500 ${showRefs ? "max-h-[600px] opacity-100" : "max-h-0 opacity-0"}`}>
+                <Card className="p-8 glow-card text-sm space-y-4">
                   <p className="pl-8 -indent-8">
-                    EAE Business School. (2025). 
-                    <em>Qué es el empowerment y cómo puede beneficiar a una empresa.</em> 
-                    https://www.eaeprogramas.es/blog/negocio/empresa/que-es-el-empowerment-y-como-puede-beneficiar-una-empresa
+                    EAE Business School. (2025). <em>Que es el empowerment y como puede beneficiar a una empresa.</em> https://www.eaeprogramas.es/blog/negocio/empresa/que-es-el-empowerment-y-como-puede-beneficiar-una-empresa
                   </p>
-
                   <p className="pl-8 -indent-8">
-                    ESIC Business & Marketing School. (s.f.). 
-                    <em>¿Qué es el liderazgo situacional? Características y ventajas.</em> 
-                    https://www.esic.edu/rethink/business/liderazgo-situacional-que-es-caracteristicas-y-ventajas-c
+                    ESIC Business & Marketing School. (s.f.). <em>Que es el liderazgo situacional? Caracteristicas y ventajas.</em> https://www.esic.edu/rethink/business/liderazgo-situacional-que-es-caracteristicas-y-ventajas-c
                   </p>
-
                   <p className="pl-8 -indent-8">
-                    GoConqr. (2024). 
-                    <em>Rejilla administrativa o grill gerencial.</em> 
-                    https://www.goconqr.com/mapamental/1061857/rejilla-administrativa-grill-gerencial
+                    GoConqr. (2024). <em>Rejilla administrativa o grill gerencial.</em> https://www.goconqr.com/mapamental/1061857/rejilla-administrativa-grill-gerencial
                   </p>
-
                   <p className="pl-8 -indent-8">
-                    Kuspit. (2025, junio 10). 
-                    <em>Cultura organizacional basada en valores: Cómo alinearlos en las empresas.</em> 
-                    https://blog.kuspit.com/notas/cultura-organizacional-basada-en-valores
+                    Kuspit. (2025, junio 10). <em>Cultura organizacional basada en valores: Como alinearlos en las empresas.</em> https://blog.kuspit.com/notas/cultura-organizacional-basada-en-valores
                   </p>
-
                   <p className="pl-8 -indent-8">
-                    National Society of Leadership and Success. (2022, July 21). 
-                    <em>What is laissez-faire leadership?</em> 
-                    https://www.nsls.org/blog/what-is-lassiez-faire-leadership
+                    National Society of Leadership and Success. (2022, July 21). <em>What is laissez-faire leadership?</em> https://www.nsls.org/blog/what-is-lassiez-faire-leadership
                   </p>
-
                   <p className="pl-8 -indent-8">
-                    Repsol. (2023, septiembre 11). 
-                    <em>Qué es el liderazgo transformacional y sus características.</em> 
-                    https://www.repsol.com/es/energia-avanzar/personas/liderazgo-transformacional/index.cshtml
+                    Repsol. (2023, septiembre 11). <em>Que es el liderazgo transformacional y sus caracteristicas.</em> https://www.repsol.com/es/energia-avanzar/personas/liderazgo-transformacional/index.cshtml
                   </p>
-
                 </Card>
-              )}
+              </div>
             </section>
+
           </div>
         </section>
 
       </main>
 
-      {/* ================= FOOTER ================= */}
       <Footer />
     </>
   )

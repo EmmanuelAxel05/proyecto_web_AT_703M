@@ -1,24 +1,88 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
+import { ArrowLeft, Wrench, ChevronDown, ExternalLink, Play } from "lucide-react"
+import { useRouter } from "next/navigation"
 
-export default function HerramientasPage() {
-  const [showRefs, setShowRefs] = useState(false)
+function ContentSection({ 
+  title, 
+  children, 
+  image, 
+  imagePosition = "left",
+  index 
+}: { 
+  title: string
+  children: React.ReactNode
+  image: string
+  imagePosition?: "left" | "right"
+  index: number
+}) {
+  const [imageLoaded, setImageLoaded] = useState(false)
+  const [isVisible, setIsVisible] = useState(false)
 
-  const Section = ({ title, text, img, reverse = false }: any) => (
-    <div className={`grid md:grid-cols-2 gap-10 items-center ${reverse ? "md:flex-row-reverse" : ""}`}>
-      {!reverse && <img src={img} className="rounded-2xl shadow-xl" />}
-      <Card className="p-10 glow-card">
-        <h2 className="text-4xl font-bold mb-6">{title}</h2>
-        <p className="whitespace-pre-line">{text}</p>
-      </Card>
-      {reverse && <img src={img} className="rounded-2xl shadow-xl" />}
+  useEffect(() => {
+    const timer = setTimeout(() => setIsVisible(true), index * 100)
+    return () => clearTimeout(timer)
+  }, [index])
+
+  const imageElement = (
+    <div className="relative rounded-2xl overflow-hidden shadow-xl group">
+      {!imageLoaded && (
+        <div className="absolute inset-0 shimmer aspect-[4/3]" />
+      )}
+      <img 
+        src={image} 
+        alt={title}
+        onLoad={() => setImageLoaded(true)}
+        className={`w-full aspect-[4/3] object-cover transition-all duration-700 group-hover:scale-105 ${
+          imageLoaded ? "opacity-100" : "opacity-0"
+        }`}
+      />
     </div>
   )
+
+  const contentElement = (
+    <Card className="p-8 md:p-10 glow-card h-full">
+      <h2 className="text-2xl md:text-3xl font-bold mb-6 text-balance">{title}</h2>
+      <div className="text-muted-foreground leading-relaxed space-y-4">
+        {children}
+      </div>
+    </Card>
+  )
+
+  return (
+    <div 
+      className={`grid md:grid-cols-2 gap-8 items-stretch transition-all duration-700 ${
+        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+      }`}
+    >
+      {imagePosition === "left" ? (
+        <>
+          {imageElement}
+          {contentElement}
+        </>
+      ) : (
+        <>
+          {contentElement}
+          {imageElement}
+        </>
+      )}
+    </div>
+  )
+}
+
+export default function HerramientasPage() {
+  const router = useRouter()
+  const [showRefs, setShowRefs] = useState(false)
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
   return (
     <>
@@ -26,223 +90,314 @@ export default function HerramientasPage() {
 
       <main className="bg-background">
 
+        {/* HERO */}
+        <section className="relative min-h-[60vh] flex items-center justify-center text-center overflow-hidden">
+          <div className="absolute inset-0">
+            <img
+              src="/fondoherramientas.jpg"
+              alt="Herramientas del tiempo"
+              className="w-full h-full object-cover opacity-10"
+            />
+            <div className="absolute inset-0 bg-gradient-to-b from-background via-background/80 to-background" />
+          </div>
 
-        {/* ================= HERO ================= */}
-        <section className="relative min-h-[70vh] flex items-center justify-center text-center overflow-hidden bg-gradient-to-b from-muted/30 to-background">
+          <div className="relative z-10 max-w-5xl mx-auto px-6 py-32 space-y-6">
+            <Button
+              variant="outline"
+              onClick={() => router.back()}
+              className={`group hover:border-primary hover:text-primary transition-all duration-500 ${
+                mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+              }`}
+            >
+              <ArrowLeft className="mr-2 h-4 w-4 group-hover:-translate-x-1 transition-transform" />
+              Volver
+            </Button>
 
-        {/* Imagen fondo */}
-        <img
-            src="/fondoherramientas.jpg"
-            alt="Herramientas del tiempo"
-            className="absolute inset-0 w-full h-full object-cover opacity-20"
-        />
+            <div 
+              className={`inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium transition-all duration-500 delay-100 ${
+                mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+              }`}
+            >
+              <Wrench className="w-4 h-4" />
+              Unidad 1
+            </div>
 
-        {/* Contenido */}
-        <div className="relative z-10 max-w-5xl mx-auto px-6 space-y-4">
-
-            {/* Unidad */}
-            <p className="text-xl tracking-wide text-muted-foreground">
-            Unidad 1
-            </p>
-
-            {/* Título en negritas */}
-            <h1 className="text-6xl md:text-7xl font-bold tracking-tight">
-            Herramientas para la Administración del Tiempo
+            <h1 
+              className={`text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-balance transition-all duration-500 delay-200 ${
+                mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+              }`}
+            >
+              Herramientas para la{" "}
+              <span className="text-primary">Administracion del Tiempo</span>
             </h1>
 
-            {/* Universidad */}
-            <p className="text-muted-foreground">
-            Universidad Tecnológica de Nezahualcóyotl
+            <p 
+              className={`text-muted-foreground transition-all duration-500 delay-300 ${
+                mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+              }`}
+            >
+              Universidad Tecnologica de Nezahualcoyotl
             </p>
 
-            {/* Integrantes */}
-            <p className="text-sm text-muted-foreground">
-            Alonso Ramírez Erika Quetzalli · Duran Rodriguez Fernando Daniel ·
-            Delgado Pineda Sergio Alberto · González Martínez Luis Enrique · Manjarrez Vázquez Alfredo de Jesús
+            <p 
+              className={`text-sm text-muted-foreground transition-all duration-500 delay-400 ${
+                mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+              }`}
+            >
+              Alonso Ramirez Erika Quetzalli | Duran Rodriguez Fernando Daniel |
+              Delgado Pineda Sergio Alberto | Gonzalez Martinez Luis Enrique | Manjarrez Vazquez Alfredo de Jesus
             </p>
-
-        </div>
+          </div>
         </section>
 
+        {/* CONTENIDO */}
+        <section className="py-24">
+          <div className="max-w-7xl mx-auto px-6 lg:px-8 space-y-20">
 
-        {/* ================= CONTENIDO ================= */}
-        <section className="py-32">
-          <div className="max-w-7xl mx-auto px-6 space-y-28">
+            <ContentSection 
+              title="Introduccion" 
+              image="/intro.jpg"
+              imagePosition="left"
+              index={0}
+            >
+              <p>
+                La administracion del tiempo es esencial para organizar actividades,
+                cumplir plazos y mejorar el rendimiento academico de forma eficiente.
+              </p>
+            </ContentSection>
 
+            <ContentSection 
+              title="Enfoques del tiempo" 
+              image="/enfoques.jpg"
+              imagePosition="right"
+              index={1}
+            >
+              <p>Existen dos enfoques principales:</p>
+              <ul className="space-y-2 mt-4">
+                <li className="flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-primary" />
+                  Tiempo de respuesta
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-primary" />
+                  Tiempo discrecional
+                </li>
+              </ul>
+              <p className="mt-4">Ambos influyen directamente en la productividad.</p>
+            </ContentSection>
 
-            <Section
-              title="Introducción"
-              img="/intro.jpg"
-              text={`La administración del tiempo es esencial para organizar actividades,
-cumplir plazos y mejorar el rendimiento académico de forma eficiente.`}
-            />
+            <ContentSection 
+              title="Tiempo de respuesta vs discrecional" 
+              image="/comparacion.jpg"
+              imagePosition="left"
+              index={2}
+            >
+              <div className="grid sm:grid-cols-2 gap-4">
+                <div className="p-4 rounded-xl bg-destructive/5 border border-destructive/10">
+                  <p className="font-bold text-foreground mb-2">Tiempo de respuesta</p>
+                  <ul className="text-sm space-y-1">
+                    <li>- Situaciones imprevistas</li>
+                    <li>- Reactivo</li>
+                    <li>- Genera presion</li>
+                  </ul>
+                </div>
+                <div className="p-4 rounded-xl bg-primary/5 border border-primary/10">
+                  <p className="font-bold text-foreground mb-2">Tiempo discrecional</p>
+                  <ul className="text-sm space-y-1">
+                    <li>- Planeado</li>
+                    <li>- Enfoque consciente</li>
+                    <li>- Orientado a objetivos</li>
+                  </ul>
+                </div>
+              </div>
+            </ContentSection>
 
+            <ContentSection 
+              title="Organizacion - Ejecucion - Resultado" 
+              image="/organizacion.jpg"
+              imagePosition="right"
+              index={3}
+            >
+              <div className="space-y-3">
+                <p><strong className="text-foreground">Organizacion:</strong> priorizar tareas y planificar actividades.</p>
+                <p><strong className="text-foreground">Ejecucion:</strong> trabajar por bloques y reducir distracciones.</p>
+                <p><strong className="text-foreground">Resultado:</strong> menos estres y mejor rendimiento.</p>
+              </div>
+            </ContentSection>
 
-            <Section
-              title="Enfoques del tiempo"
-              img="/enfoques.jpg"
-              reverse
-              text={`Existen dos enfoques principales:
-• Tiempo de respuesta
-• Tiempo discrecional
+            <ContentSection 
+              title="Principio 10-90" 
+              image="/pareto.jpg"
+              imagePosition="left"
+              index={4}
+            >
+              <p>
+                Solo el 10% de las tareas genera el 90% de los resultados.
+                Por ello se deben priorizar actividades de alto impacto.
+              </p>
+            </ContentSection>
 
-Ambos influyen directamente en la productividad.`}
-            />
+            <ContentSection 
+              title="Ciclo de productividad" 
+              image="/ciclo.jpg"
+              imagePosition="right"
+              index={5}
+            >
+              <p>
+                Alternar concentracion intensa con descansos cortos.
+                Evita agotamiento y mantiene un rendimiento sostenido.
+              </p>
+            </ContentSection>
 
+            <ContentSection 
+              title="Ley de Parkinson" 
+              image="/parkinson.jpg"
+              imagePosition="left"
+              index={6}
+            >
+              <p>El trabajo se expande para llenar el tiempo disponible.</p>
+              <div className="mt-4 p-4 rounded-xl bg-primary/5 border border-primary/10">
+                <p className="font-semibold text-foreground mb-2">Solucion:</p>
+                <ul className="text-sm space-y-1">
+                  <li>- Establecer plazos cortos</li>
+                  <li>- Dividir tareas</li>
+                  <li>- Evitar tiempos excesivos</li>
+                </ul>
+              </div>
+            </ContentSection>
 
-            <Section
-              title="Tiempo de respuesta vs discrecional"
-              img="/comparacion.jpg"
-              text={`Tiempo de respuesta:
-• Situaciones imprevistas
-• Reactivo
-• Genera presión
+            <ContentSection 
+              title="Herramientas de gestion" 
+              image="/delegacion.jpg"
+              imagePosition="right"
+              index={7}
+            >
+              <ul className="space-y-2">
+                <li className="flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-primary" />
+                  Delegacion
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-primary" />
+                  Manejo de interrupciones
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-primary" />
+                  Asertividad
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-primary" />
+                  Gestion del estres
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-primary" />
+                  Solucion de problemas
+                </li>
+              </ul>
+            </ContentSection>
 
-Tiempo discrecional:
-• Planeado
-• Enfoque consciente
-• Orientado a objetivos`}
-            />
-
-
-            <Section
-              title="Organización → Ejecución → Resultado"
-              img="/organizacion.jpg"
-              reverse
-              text={`Organización: priorizar tareas y planificar actividades.
-Ejecución: trabajar por bloques y reducir distracciones.
-Resultado: menos estrés y mejor rendimiento.`}
-            />
-
-
-            <Section
-              title="Principio 10–90"
-              img="/pareto.jpg"
-              text={`Solo el 10% de las tareas genera el 90% de los resultados.
-Por ello se deben priorizar actividades de alto impacto.`}
-            />
-
-
-            <Section
-              title="Ciclo de productividad"
-              img="/ciclo.jpg"
-              reverse
-              text={`Alternar concentración intensa con descansos cortos.
-Evita agotamiento y mantiene un rendimiento sostenido.`}
-            />
-
-
-            <Section
-              title="Ley de Parkinson"
-              img="/parkinson.jpg"
-              text={`El trabajo se expande para llenar el tiempo disponible.
-Solución:
-• Establecer plazos cortos
-• Dividir tareas
-• Evitar tiempos excesivos`}
-            />
-
-
-            <Section
-              title="Herramientas de gestión"
-              img="/delegacion.jpg"
-              reverse
-              text={`• Delegación
-• Manejo de interrupciones
-• Asertividad
-• Gestión del estrés
-• Solución de problemas`}
-            />
-
-
-            <Section
-              title="Reuniones de trabajo efectivas"
-              img="/reuniones.jpg"
-              text={`Características clave:
-• Horarios definidos
-• Objetivo claro
-• Agenda estructurada
-• Información previa
-• Requerimientos listos
-• Minuta de acuerdos
-• Cierre formal`}
-            /> 
+            <ContentSection 
+              title="Reuniones de trabajo efectivas" 
+              image="/reuniones.jpg"
+              imagePosition="left"
+              index={8}
+            >
+              <p className="font-semibold text-foreground mb-3">Caracteristicas clave:</p>
+              <ul className="space-y-2 text-sm">
+                <li className="flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-primary" />
+                  Horarios definidos
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-primary" />
+                  Objetivo claro
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-primary" />
+                  Agenda estructurada
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-primary" />
+                  Informacion previa
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-primary" />
+                  Requerimientos listos
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-primary" />
+                  Minuta de acuerdos
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-primary" />
+                  Cierre formal
+                </li>
+              </ul>
+            </ContentSection>
 
             {/* VIDEO */}
-            <section className="text-center space-y-6">
-              <h2 className="text-4xl font-bold">Video explicativo</h2>
+            <section className="text-center space-y-8">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium">
+                <Play className="w-4 h-4" />
+                Video Explicativo
+              </div>
+              
+              <h2 className="text-3xl md:text-4xl font-bold">Aprende visualmente</h2>
 
-              <div className="aspect-video max-w-4xl mx-auto">
+              <div className="aspect-video max-w-4xl mx-auto rounded-2xl overflow-hidden shadow-2xl shadow-primary/10">
                 <iframe
-                  className="w-full h-full rounded-2xl shadow-xl"
+                  className="w-full h-full"
                   src="https://www.youtube.com/embed/RRdr5GHtcKk"
                   allowFullScreen
+                  title="Video explicativo sobre herramientas"
                 />
               </div>
             </section>
 
             {/* REFERENCIAS */}
-              <section className="space-y-6">
-                <div className="text-center">
-                  <Button
-                    onClick={() => setShowRefs(!showRefs)}
-                    className="bg-[#019f60]"
-                  >
-                    {showRefs ? "Ocultar referencias" : "Mostrar referencias"}
-                  </Button>
-                </div>
+            <section className="space-y-6">
+              <div className="text-center">
+                <Button
+                  onClick={() => setShowRefs(!showRefs)}
+                  className="bg-primary hover:bg-primary/90 text-primary-foreground gap-2"
+                >
+                  <ExternalLink className="w-4 h-4" />
+                  {showRefs ? "Ocultar referencias" : "Mostrar referencias"}
+                  <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${showRefs ? "rotate-180" : ""}`} />
+                </Button>
+              </div>
 
-                {showRefs && (
-                  <Card className="p-8 glow-card text-sm text-left space-y-4">
+              <div className={`overflow-hidden transition-all duration-500 ${showRefs ? "max-h-[600px] opacity-100" : "max-h-0 opacity-0"}`}>
+                <Card className="p-8 glow-card text-sm space-y-4">
+                  <p className="pl-8 -indent-8">
+                    Guias BibUpo. (s. f.). <em>Planificacion y gestion del tiempo: Herramientas, aplicaciones y software</em>.
+                    https://guiasbib.upo.es/planificacion-y-gestiondel-tiempo/herramientas-aplicaciones-y-software
+                  </p>
+                  <p className="pl-8 -indent-8">
+                    33 herramientas de productividad y gestion del tiempo. (s. f.). https://cultumatica.com/herramientasproductividad-gestion-tiempo/
+                  </p>
+                  <p className="pl-8 -indent-8">
+                    Drucker, P. F. (2007). <em>La gestion eficaz</em> (Ed. revisada). Editorial Sudamericana.
+                  </p>
+                  <p className="pl-8 -indent-8">
+                    Allen, D. (2015). <em>Organizate con eficacia: Getting Things Done</em> (Ed. actualizada). Ediciones Urano.
+                  </p>
+                  <p className="pl-8 -indent-8">
+                    Macan, T. H. (1994). Time management: Test of a process model. <em>Journal of Applied Psychology</em>.
+                  </p>
+                  <p className="pl-8 -indent-8">
+                    Claessens, B. J. C., van Eerde, W., Rutte, C. G., & Roe, R. A. (2007). A review of the time management literature. <em>Personnel Review</em>.
+                  </p>
+                  <p className="pl-8 -indent-8">
+                    Laoyan, S. (2025, febrero 21). Que es el principio de Pareto o la regla 80/20. <em>Asana</em>. https://asana.com/es/resources/pareto-principle-80-20-rule
+                  </p>
+                  <p className="pl-8 -indent-8">
+                    Ortiz, N. (2025, noviembre 20). Gestion del tiempo en el trabajo: La guia definitiva de tecnicas y estrategias. <em>WorkMeter</em>. https://www.workmeter.com/blog/gestion-deltiempo-trabajo/
+                  </p>
+                </Card>
+              </div>
+            </section>
 
-                    <p className="pl-8 -indent-8">
-                      Guías BibUpo. (s. f.). <em>Planificación y gestión del tiempo: Herramientas,
-                      aplicaciones y software</em>.
-                      https://guiasbib.upo.es/planificacion-y-gestiondel-tiempo/herramientas-aplicaciones-y-software
-                    </p>
-
-                    <p className="pl-8 -indent-8">
-                      33 herramientas de productividad y gestión del tiempo. (s. f.).
-                      https://cultumatica.com/herramientasproductividad-gestion-tiempo/
-                    </p>
-
-                    <p className="pl-8 -indent-8">
-                      Drucker, P. F. (2007). <em>La gestión eficaz</em> (Ed. revisada).
-                      Editorial Sudamericana.
-                    </p>
-
-                    <p className="pl-8 -indent-8">
-                      Allen, D. (2015). <em>Organízate con eficacia: Getting Things Done</em>
-                      (Ed. actualizada). Ediciones Urano.
-                    </p>
-
-                    <p className="pl-8 -indent-8">
-                      Macan, T. H. (1994). Time management: Test of a process model.
-                      <em> Journal of Applied Psychology</em>.
-                    </p>
-
-                    <p className="pl-8 -indent-8">
-                      Claessens, B. J. C., van Eerde, W., Rutte, C. G., & Roe, R. A. (2007).
-                      A review of the time management literature.
-                      <em> Personnel Review</em>.
-                    </p>
-
-                    <p className="pl-8 -indent-8">
-                      Laoyan, S. (2025, febrero 21). Qué es el principio de Pareto o la regla 80/20.
-                      <em> Asana</em>.
-                      https://asana.com/es/resources/pareto-principle-80-20-rule
-                    </p>
-
-                    <p className="pl-8 -indent-8">
-                      Ortiz, N. (2025, noviembre 20). Gestión del tiempo en el trabajo:
-                      La guía definitiva de técnicas y estrategias.
-                      <em> WorkMeter</em>.
-                      https://www.workmeter.com/blog/gestion-deltiempo-trabajo/
-                    </p>
-
-                  </Card>
-                )}
-              </section>
           </div>
         </section>
 
