@@ -18,9 +18,9 @@ const jetbrainsMono = JetBrains_Mono({
 })
 
 export const metadata: Metadata = {
-  title: "Administracion del Tiempo | Universidad Tecnologica de Nezahualcoyotl",
-  description: "Plataforma academica para fortalecer la organizacion, planeacion y productividad. Contenidos, temas y actividades de la asignatura Administracion del Tiempo.",
-  keywords: ["administracion del tiempo", "liderazgo", "universidad", "productividad", "UTN"],
+  title: "Administración del Tiempo | Universidad Tecnológica de Nezahualcóyotl",
+  description: "Plataforma académica para fortalecer la organización, planeación y productividad. Contenidos, temas y actividades de la asignatura Administración del Tiempo.",
+  keywords: ["administración del tiempo", "liderazgo", "universidad", "productividad", "UTN"],
   authors: [{ name: "Equipo 6 - UTN" }],
   generator: "v0.app",
 }

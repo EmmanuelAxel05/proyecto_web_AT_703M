@@ -135,7 +135,7 @@ export default function AutoestimaPage() {
                 mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
               }`}
             >
-              Universidad Tecnologica de Nezahualcoyotl
+              Universidad Tecnológica de Nezahualcóyotl
             </p>
 
             <p 
@@ -143,7 +143,7 @@ export default function AutoestimaPage() {
                 mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
               }`}
             >
-              Acevedo Herrera Mario Alberto | Alarcon Vazquez David Ricardo |
+              Acevedo Herrera Mario Alberto | Alarcón Vázquez David Ricardo |
               Hilario Monroy Luis Manuel | Perea Reyes Tania
             </p>
           </div>
@@ -160,9 +160,9 @@ export default function AutoestimaPage() {
               index={0}
             >
               <p>
-                Es la percepcion y valoracion subjetiva que una persona tiene de si misma, basada
-                en la aceptacion personal y en el autoconcepto, es decir, como se ve, se siente y se
-                evalua en relacion con sus experiencias, habilidades y relaciones interpersonales.
+                Es la percepción y valoración subjetiva que una persona tiene de sí misma, basada
+                en la aceptación personal y en el autoconcepto, es decir, cómo se ve, se siente y se
+                evalúa en relación con sus experiencias, habilidades y relaciones interpersonales.
               </p>
             </ContentSection>
 
@@ -173,9 +173,9 @@ export default function AutoestimaPage() {
               index={1}
             >
               <p>
-                La autoestima influye en la motivacion y en la forma de enfrentar dificultades.
+                La autoestima influye en la motivación y en la forma de enfrentar dificultades.
                 Una autoestima sana genera seguridad y confianza; una autoestima baja provoca
-                inseguridad, miedo al fracaso y dependencia de la aprobacion externa.
+                inseguridad, miedo al fracaso y dependencia de la aprobación externa.
               </p>
             </ContentSection>
 
@@ -186,13 +186,13 @@ export default function AutoestimaPage() {
               index={2}
             >
               <p>
-                Es la sensacion de conexion, seguridad y aceptacion que experimenta un individuo
-                al formar parte de un grupo, familia, organizacion o comunidad.
+                Es la sensación de conexión, seguridad y aceptación que experimenta un individuo
+                al formar parte de un grupo, familia, organización o comunidad.
               </p>
               <ul className="space-y-2 mt-4">
                 <li className="flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-primary" />
-                  Identidad y conexion
+                  Identidad y conexión
                 </li>
                 <li className="flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-primary" />
@@ -210,14 +210,14 @@ export default function AutoestimaPage() {
             </ContentSection>
 
             <ContentSection 
-              title="Implicacion en el liderazgo" 
+              title="Implicación en el liderazgo" 
               image="/liderazgo.jpg"
               imagePosition="right"
               index={3}
             >
               <p>
                 La autoestima y el sentido de pertenencia son pilares fundamentales para un
-                liderazgo efectivo. Un lider seguro de si mismo inspira confianza y fomenta un
+                liderazgo efectivo. Un líder seguro de sí mismo inspira confianza y fomenta un
                 entorno cooperativo.
               </p>
               <p className="mt-4">
@@ -233,10 +233,10 @@ export default function AutoestimaPage() {
               index={4}
             >
               <ul className="space-y-3">
-                <li><strong className="text-foreground">Personales:</strong> Se relacionan con la manera en que la persona se percibe a si misma</li>
+                <li><strong className="text-foreground">Personales:</strong> Se relacionan con la manera en que la persona se percibe a sí misma.</li>
                 <li><strong className="text-foreground">Familiares:</strong> El entorno familiar es clave, sobre todo en la infancia y adolescencia.</li>
                 <li><strong className="text-foreground">Sociales:</strong> Influyen las relaciones con otras personas y la sociedad.</li>
-                <li><strong className="text-foreground">Academicos y laborales:</strong> Relacionados con el desempeno y el reconocimiento.</li>
+                <li><strong className="text-foreground">Académicos y laborales:</strong> Relacionados con el desempeño y el reconocimiento.</li>
               </ul>
             </ContentSection>
 
@@ -249,15 +249,15 @@ export default function AutoestimaPage() {
               <div className="space-y-4">
                 <div className="p-4 rounded-xl bg-primary/5 border border-primary/10">
                   <p className="font-semibold text-foreground mb-2">Autoconocimiento</p>
-                  <p className="text-sm">Es la capacidad de conocernos a nosotros mismos. Incluye reconocer nuestras fortalezas y debilidades, identificar nuestras emociones y saber que nos gusta, que nos molesta y que nos motiva.</p>
+                  <p className="text-sm">Es la capacidad de conocernos a nosotros mismos. Incluye reconocer nuestras fortalezas y debilidades, identificar nuestras emociones y saber qué nos gusta, qué nos molesta y qué nos motiva.</p>
                 </div>
                 <div className="p-4 rounded-xl bg-accent/5 border border-accent/10">
                   <p className="font-semibold text-foreground mb-2">Autoconcepto</p>
-                  <p className="text-sm">Es la imagen que tenemos de nosotros mismos. Se forma con lo que pensamos de quienes somos, lo que creemos que valemos y la forma en que nos describimos.</p>
+                  <p className="text-sm">Es la imagen que tenemos de nosotros mismos. Se forma con lo que pensamos de quiénes somos, lo que creemos que valemos y la forma en que nos describimos.</p>
                 </div>
                 <div className="p-4 rounded-xl bg-chart-2/5 border border-chart-2/10">
                   <p className="font-semibold text-foreground mb-2">Competencia personal</p>
-                  <p className="text-sm">Es la confianza que tenemos en nuestras propias habilidades. Tiene que ver con sentirnos capaces de enfrentar desafios, solucionar problemas y aprender de los fracasos.</p>
+                  <p className="text-sm">Es la confianza que tenemos en nuestras propias habilidades. Tiene que ver con sentirnos capaces de enfrentar desafíos, solucionar problemas y aprender de los fracasos.</p>
                 </div>
               </div>
             </ContentSection>
@@ -275,19 +275,19 @@ export default function AutoestimaPage() {
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="w-2 h-2 rounded-full bg-primary mt-2 shrink-0" />
-                  <span><strong className="text-foreground">Autovaloracion:</strong> Reconocer logros, aunque sean pequenos</span>
+                  <span><strong className="text-foreground">Autovaloración:</strong> Reconocer logros, aunque sean pequeños.</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="w-2 h-2 rounded-full bg-primary mt-2 shrink-0" />
-                  <span><strong className="text-foreground">Autocuidado:</strong> Mantener habitos saludables (alimentacion, ejercicio, descanso).</span>
+                  <span><strong className="text-foreground">Autocuidado:</strong> Mantener hábitos saludables (alimentación, ejercicio, descanso).</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="w-2 h-2 rounded-full bg-primary mt-2 shrink-0" />
-                  <span><strong className="text-foreground">Pensamiento positivo:</strong> Sustituir la autocritica excesiva por afirmaciones constructivas.</span>
+                  <span><strong className="text-foreground">Pensamiento positivo:</strong> Sustituir la autocrítica excesiva por afirmaciones constructivas.</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="w-2 h-2 rounded-full bg-primary mt-2 shrink-0" />
-                  <span><strong className="text-foreground">Resiliencia:</strong> Aprender de los errores sin que definan la propia valia.</span>
+                  <span><strong className="text-foreground">Resiliencia:</strong> Aprender de los errores sin que definan la propia valía.</span>
                 </li>
               </ul>
             </ContentSection>
@@ -299,14 +299,14 @@ export default function AutoestimaPage() {
               index={7}
             >
               <p>
-                Una autoestima solida mejora la salud mental, las relaciones y la toma de decisiones.
-                En el ambito academico, los estudiantes con buena autoestima presentan mayor
-                motivacion, mejor rendimiento y resiliencia frente a la frustracion.
+                Una autoestima sólida mejora la salud mental, las relaciones y la toma de decisiones.
+                En el ámbito académico, los estudiantes con buena autoestima presentan mayor
+                motivación, mejor rendimiento y resiliencia frente a la frustración.
               </p>
               <ul className="space-y-2 mt-4">
-                <li><strong className="text-foreground">Vida personal:</strong> Una autoestima solida mejora la salud mental, las relaciones y la toma de decisiones</li>
-                <li><strong className="text-foreground">Vida academica:</strong> Estudiantes con buena autoestima muestran mayor motivacion, mejor rendimiento y resiliencia frente a la frustracion.</li>
-                <li><strong className="text-foreground">Desarrollo integral:</strong> Fomenta autonomia, creatividad y capacidad de liderazgo.</li>
+                <li><strong className="text-foreground">Vida personal:</strong> Una autoestima sólida mejora la salud mental, las relaciones y la toma de decisiones.</li>
+                <li><strong className="text-foreground">Vida académica:</strong> Estudiantes con buena autoestima muestran mayor motivación, mejor rendimiento y resiliencia frente a la frustración.</li>
+                <li><strong className="text-foreground">Desarrollo integral:</strong> Fomenta autonomía, creatividad y capacidad de liderazgo.</li>
               </ul>
             </ContentSection>
 

@@ -5,13 +5,13 @@ import Link from "next/link"
 import { BookOpen, Wrench, Heart, Brain, Users, Home, Target, ClipboardCheck, ArrowUpRight } from "lucide-react"
 
 const unidad1Links = [
-  { href: "/unidad1/conceptos", label: "Conceptos basicos", icon: BookOpen },
+  { href: "/unidad1/conceptos", label: "Conceptos básicos", icon: BookOpen },
   { href: "/unidad1/herramientas", label: "Herramientas del tiempo", icon: Wrench },
 ]
 
 const unidad2Links = [
   { href: "/unidad2/autoestima", label: "Autoestima", icon: Heart },
-  { href: "/unidad2/motivacion", label: "Motivacion e inteligencia emocional", icon: Brain },
+  { href: "/unidad2/motivacion", label: "Motivación e inteligencia emocional", icon: Brain },
   { href: "/unidad2/liderazgo", label: "Liderazgo transformacional", icon: Users },
 ]
 
@@ -43,12 +43,12 @@ export function Footer() {
 
             <div>
               <h3 className="text-lg font-bold mb-2">
-                Universidad Tecnologica de Nezahualcoyotl
+                Universidad Tecnológica de Nezahualcóyotl
               </h3>
 
               <p className="text-sm text-muted-foreground leading-relaxed">
-                Administracion del Tiempo - Plataforma academica disenada para
-                fortalecer la organizacion personal, la productividad y el liderazgo.
+                Administración del Tiempo - Plataforma académica diseñada para
+                fortalecer la organización personal, la productividad y el liderazgo.
               </p>
             </div>
           </div>
@@ -106,7 +106,7 @@ export function Footer() {
 
           {/* NAVEGACION */}
           <div>
-            <h4 className="font-bold mb-5">Navegacion</h4>
+            <h4 className="font-bold mb-5">Navegación</h4>
 
             <ul className="space-y-3">
               {navLinks.map((link) => (

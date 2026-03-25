@@ -52,10 +52,10 @@ export function Hero() {
             }`}
           >
             <p className="font-semibold text-foreground tracking-wide">
-              Universidad Tecnologica de Nezahualcoyotl
+              Universidad Tecnológica de Nezahualcóyotl
             </p>
-            <p className="text-muted-foreground">Division de Informatica y Computacion</p>
-            <p className="text-muted-foreground">Ingenieria en Desarrollo y Gestion de Software</p>
+            <p className="text-muted-foreground">División de Informática y Computación</p>
+            <p className="text-muted-foreground">Ingeniería en Desarrollo y Gestión de Software</p>
           </div>
 
           {/* Titulo principal */}
@@ -66,7 +66,7 @@ export function Hero() {
           >
             <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight text-balance">
               <span className="bg-gradient-to-r from-foreground via-foreground to-muted-foreground bg-clip-text">
-                Administracion del
+                Administración del
               </span>
               <span className="block mt-2 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
                 Tiempo
@@ -81,8 +81,8 @@ export function Hero() {
             }`}
           >
             Plataforma digital donde se concentran los contenidos, temas y
-            actividades de la asignatura para fortalecer la organizacion,
-            planeacion y productividad academica.
+            actividades de la asignatura para fortalecer la organización,
+            planeación y productividad académica.
           </p>
 
           {/* Informacion academica */}
@@ -94,7 +94,7 @@ export function Hero() {
             <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
             <p>
               <span className="font-semibold text-foreground">
-                Mtro. Fernandez Hernandez Luis Manuel
+                Mtro. Fernández Hernández Luis Manuel
               </span>
             </p>
           </div>

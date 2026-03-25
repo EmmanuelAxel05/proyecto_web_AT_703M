@@ -136,7 +136,7 @@ export default function MotivacionPage() {
                 mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
               }`}
             >
-              Universidad Tecnologica de Nezahualcoyotl
+              Universidad Tecnológica de Nezahualcóyotl
             </p>
 
             <p 
@@ -144,8 +144,8 @@ export default function MotivacionPage() {
                 mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
               }`}
             >
-              Barrera Perez Marco Antonio | Castillo Alonso Javier |
-              Cuin Arvizu Victor Rey | Mello Corona Angel Uriel | Solano Miranda Juan Jonathan
+              Barrera Pérez Marco Antonio | Castillo Alonso Javier |
+              Cuín Arvizu Víctor Rey | Mello Corona Ángel Uriel | Solano Miranda Juan Jonathan
             </p>
           </div>
         </section>
@@ -155,7 +155,7 @@ export default function MotivacionPage() {
           <div className="max-w-7xl mx-auto px-6 lg:px-8 space-y-20">
 
             <ContentSection 
-              title="Que es la Inteligencia Emocional? (IE)" 
+              title="¿Qué es la Inteligencia Emocional? (IE)" 
               image="/def.jpg"
               imagePosition="left"
               index={0}
@@ -171,7 +171,7 @@ export default function MotivacionPage() {
                 </li>
                 <li className="flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-primary" />
-                  Comprender las emociones de los demas
+                  Comprender las emociones de los demás
                 </li>
                 <li className="flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-primary" />
@@ -185,17 +185,17 @@ export default function MotivacionPage() {
             </ContentSection>
 
             <ContentSection 
-              title="Caracteristicas de la Inteligencia Emocional" 
+              title="Características de la Inteligencia Emocional" 
               image="/caracteristicasie.jpg"
               imagePosition="right"
               index={1}
             >
               <ul className="space-y-3">
-                <li><strong className="text-foreground">Autoconciencia:</strong> reconocer lo que siento y por que</li>
-                <li><strong className="text-foreground">Autorregulacion:</strong> controlar impulsos y reacciones</li>
-                <li><strong className="text-foreground">Empatia:</strong> comprender emociones de otras personas</li>
-                <li><strong className="text-foreground">Habilidades sociales:</strong> comunicacion, trabajo en equipo y resolucion de conflictos</li>
-                <li><strong className="text-foreground">Motivacion interna:</strong> deseo de mejorar y alcanzar metas</li>
+                <li><strong className="text-foreground">Autoconciencia:</strong> reconocer lo que siento y por qué.</li>
+                <li><strong className="text-foreground">Autorregulación:</strong> controlar impulsos y reacciones.</li>
+                <li><strong className="text-foreground">Empatía:</strong> comprender emociones de otras personas.</li>
+                <li><strong className="text-foreground">Habilidades sociales:</strong> comunicación, trabajo en equipo y resolución de conflictos.</li>
+                <li><strong className="text-foreground">Motivación interna:</strong> deseo de mejorar y alcanzar metas.</li>
               </ul>
             </ContentSection>
 
@@ -209,7 +209,7 @@ export default function MotivacionPage() {
               <ul className="space-y-2">
                 <li className="flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-primary" />
-                  Mejor comunicacion
+                  Mejor comunicación
                 </li>
                 <li className="flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-primary" />
@@ -217,27 +217,27 @@ export default function MotivacionPage() {
                 </li>
                 <li className="flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-primary" />
-                  Mayor colaboracion en equipos
+                  Mayor colaboración en equipos
                 </li>
                 <li className="flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-primary" />
-                  Liderazgo mas efectivo
+                  Liderazgo más efectivo
                 </li>
                 <li className="flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-primary" />
-                  Mejor manejo del estres
+                  Mejor manejo del estrés
                 </li>
               </ul>
             </ContentSection>
 
             <ContentSection 
-              title="Que es la motivacion?" 
+              title="¿Qué es la motivación?" 
               image="/mot.jpg"
               imagePosition="right"
               index={3}
             >
               <p>
-                La motivacion es lo que activa, dirige y mantiene nuestra conducta hacia una meta. En el trabajo se refleja en energia, constancia, iniciativa, calidad del esfuerzo y compromiso.
+                La motivación es lo que activa, dirige y mantiene nuestra conducta hacia una meta. En el trabajo se refleja en energía, constancia, iniciativa, calidad del esfuerzo y compromiso.
               </p>
               <div className="mt-4 p-4 rounded-xl bg-primary/5 border border-primary/10">
                 <p className="font-semibold text-foreground mb-2">Es la fuerza que:</p>
@@ -250,39 +250,39 @@ export default function MotivacionPage() {
             </ContentSection>
 
             <ContentSection 
-              title="Importancia de la Motivacion en el Ambito Laboral" 
+              title="Importancia de la Motivación en el Ámbito Laboral" 
               image="/importanciaIE.jpg"
               imagePosition="left"
               index={4}
             >
               <div className="grid sm:grid-cols-2 gap-4">
                 <div className="p-4 rounded-xl bg-primary/5 border border-primary/10">
-                  <p className="font-bold text-foreground mb-2">Cuando hay motivacion:</p>
+                  <p className="font-bold text-foreground mb-2">Cuando hay motivación:</p>
                   <ul className="text-sm space-y-1">
                     <li>- Aumenta la productividad</li>
                     <li>- Mejora la calidad del trabajo</li>
                     <li>- Hay mayor compromiso</li>
-                    <li>- Disminuye la rotacion de personal</li>
+                    <li>- Disminuye la rotación de personal</li>
                   </ul>
                 </div>
                 <div className="p-4 rounded-xl bg-destructive/5 border border-destructive/10">
-                  <p className="font-bold text-foreground mb-2">Cuando no hay motivacion:</p>
+                  <p className="font-bold text-foreground mb-2">Cuando no hay motivación:</p>
                   <ul className="text-sm space-y-1">
-                    <li>- Desinteres</li>
+                    <li>- Desinterés</li>
                     <li>- Conflictos</li>
-                    <li>- Bajo desempeno</li>
+                    <li>- Bajo desempeño</li>
                   </ul>
                 </div>
               </div>
             </ContentSection>
 
             <ContentSection 
-              title="Relacion entre IE y liderazgo" 
+              title="Relación entre IE y liderazgo" 
               image="/relacionIEyLid.jpg"
               imagePosition="right"
               index={5}
             >
-              <p className="font-semibold text-foreground mb-3">Un lider con inteligencia emocional:</p>
+              <p className="font-semibold text-foreground mb-3">Un líder con inteligencia emocional:</p>
               <ul className="space-y-2">
                 <li className="flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-primary" />
@@ -290,15 +290,15 @@ export default function MotivacionPage() {
                 </li>
                 <li className="flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-primary" />
-                  Maneja conflictos sin danar al equipo
+                  Maneja conflictos sin dañar al equipo
                 </li>
                 <li className="flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-primary" />
-                  Da retroalimentacion respetuosa
+                  Da retroalimentación respetuosa
                 </li>
                 <li className="flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-primary" />
-                  Motiva y guia a su equipo
+                  Motiva y guía a su equipo
                 </li>
               </ul>
               <p className="mt-4 p-4 rounded-xl bg-primary/5 border border-primary/10 text-sm italic">
@@ -314,23 +314,23 @@ export default function MotivacionPage() {
             >
               <div className="grid sm:grid-cols-2 gap-4">
                 <div className="p-4 rounded-xl bg-primary/5 border border-primary/10">
-                  <p className="font-semibold text-foreground mb-2">Areas de oportunidad en IE</p>
+                  <p className="font-semibold text-foreground mb-2">Áreas de oportunidad en IE</p>
                   <ul className="text-sm space-y-1">
                     <li>- Autoconciencia emocional</li>
                     <li>- Control de impulsos</li>
-                    <li>- Empatia</li>
-                    <li>- Comunicacion asertiva</li>
+                    <li>- Empatía</li>
+                    <li>- Comunicación asertiva</li>
                     <li>- Manejo de conflictos</li>
                   </ul>
                 </div>
                 <div className="p-4 rounded-xl bg-accent/5 border border-accent/10">
                   <p className="font-semibold text-foreground mb-2">Estrategias para fortalecer la IE</p>
                   <ul className="text-sm space-y-1">
-                    <li>- Autoevaluacion emocional</li>
+                    <li>- Autoevaluación emocional</li>
                     <li>- Pausas antes de reaccionar</li>
                     <li>- Escucha activa</li>
-                    <li>- Retroalimentacion respetuosa</li>
-                    <li>- Practica de la empatia</li>
+                    <li>- Retroalimentación respetuosa</li>
+                    <li>- Práctica de la empatía</li>
                   </ul>
                 </div>
               </div>
@@ -385,13 +385,13 @@ export default function MotivacionPage() {
               <div className={`overflow-hidden transition-all duration-500 ${showRefs ? "max-h-[400px] opacity-100" : "max-h-0 opacity-0"}`}>
                 <Card className="p-8 glow-card text-sm space-y-4">
                   <p className="pl-8 -indent-8">
-                    Cordova, D. G., Flores, E. N., Garcia, R. R., & Salvador, J. C. R. (n.d.). <em>Por que es importante la inteligencia emocional? Ciencia UNAM. Retrieved February 10, 2026,</em> from https://ciencia.unam.mx/leer/1504/-por-que-es-importante-lainteligencia-emocional
+                    Córdova, D. G., Flores, E. N., García, R. R., & Salvador, J. C. R. (s. f.). <em>¿Por qué es importante la inteligencia emocional? Ciencia UNAM. Recuperado el 10 de febrero de 2026,</em> de https://ciencia.unam.mx/leer/1504/-por-que-es-importante-lainteligencia-emocional
                   </p>
                   <p className="pl-8 -indent-8">
                     Equipo, N. (2025, October 24). <em>What is emotional intelligence and how does it apply to the workplace? Mental Health America.</em> https://mhanational.org/es/resources/what-is-emotional-intelligence-and-how-does-it-apply-to-theworkplace/
                   </p>
                   <p className="pl-8 -indent-8">
-                    Regader, B. (2015, May 29). <em>Que es la Inteligencia Emocional? pymOrganization.</em> https://psicologiaymente.com/inteligencia/inteligencia-emocional
+                    Regader, B. (2015, mayo 29). <em>¿Qué es la Inteligencia Emocional? Psicología y Mente.</em> https://psicologiaymente.com/inteligencia/inteligencia-emocional
                   </p>
                 </Card>
               </div>

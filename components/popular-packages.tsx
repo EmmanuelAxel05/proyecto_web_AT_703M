@@ -8,13 +8,13 @@ import { useEffect, useRef, useState } from "react"
 
 const unidad1 = [
   {
-    title: "Conceptos basicos de administracion del tiempo",
+    title: "Conceptos básicos de administración del tiempo",
     image: "/conseptos.jpg",
     href: "/unidad1/conceptos",
     icon: BookOpen,
   },
   {
-    title: "Herramientas para la administracion del tiempo",
+    title: "Herramientas para la administración del tiempo",
     image: "/herramientas.jpg",
     href: "/unidad1/herramientas",
     icon: Wrench,
@@ -29,7 +29,7 @@ const unidad2 = [
     icon: Heart,
   },
   {
-    title: "Motivacion e inteligencia emocional",
+    title: "Motivación e inteligencia emocional",
     image: "/motivacion.jpg",
     href: "/unidad2/motivacion",
     icon: Brain,
@@ -134,7 +134,7 @@ export function PopularPackages() {
           </h2>
 
           <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-            Contenidos organizados por unidades para fortalecer la administracion del tiempo
+            Contenidos organizados por unidades para fortalecer la administración del tiempo
             y el desarrollo de habilidades personales y de liderazgo.
           </p>
         </div>

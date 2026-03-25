@@ -128,7 +128,7 @@ export default function HerramientasPage() {
               }`}
             >
               Herramientas para la{" "}
-              <span className="text-primary">Administracion del Tiempo</span>
+              <span className="text-primary">Administración del Tiempo</span>
             </h1>
 
             <p 
@@ -136,7 +136,7 @@ export default function HerramientasPage() {
                 mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
               }`}
             >
-              Universidad Tecnologica de Nezahualcoyotl
+              Universidad Tecnológica de Nezahualcóyotl
             </p>
 
             <p 
@@ -144,8 +144,8 @@ export default function HerramientasPage() {
                 mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
               }`}
             >
-              Alonso Ramirez Erika Quetzalli | Duran Rodriguez Fernando Daniel |
-              Delgado Pineda Sergio Alberto | Gonzalez Martinez Luis Enrique | Manjarrez Vazquez Alfredo de Jesus
+              Alonso Ramírez Erika Quetzalli | Durán Rodríguez Fernando Daniel |
+              Delgado Pineda Sergio Alberto | González Martínez Luis Enrique | Manjarrez Vázquez Alfredo de Jesús
             </p>
           </div>
         </section>
@@ -155,14 +155,14 @@ export default function HerramientasPage() {
           <div className="max-w-7xl mx-auto px-6 lg:px-8 space-y-20">
 
             <ContentSection 
-              title="Introduccion" 
+              title="Introducción" 
               image="/intro.jpg"
               imagePosition="left"
               index={0}
             >
               <p>
-                La administracion del tiempo es esencial para organizar actividades,
-                cumplir plazos y mejorar el rendimiento academico de forma eficiente.
+                La administración del tiempo es esencial para organizar actividades,
+                cumplir plazos y mejorar el rendimiento académico de forma eficiente.
               </p>
             </ContentSection>
 
@@ -213,15 +213,15 @@ export default function HerramientasPage() {
             </ContentSection>
 
             <ContentSection 
-              title="Organizacion - Ejecucion - Resultado" 
+              title="Organización - Ejecución - Resultado" 
               image="/organizacion.jpg"
               imagePosition="right"
               index={3}
             >
               <div className="space-y-3">
-                <p><strong className="text-foreground">Organizacion:</strong> priorizar tareas y planificar actividades.</p>
-                <p><strong className="text-foreground">Ejecucion:</strong> trabajar por bloques y reducir distracciones.</p>
-                <p><strong className="text-foreground">Resultado:</strong> menos estres y mejor rendimiento.</p>
+                <p><strong className="text-foreground">Organización:</strong> priorizar tareas y planificar actividades.</p>
+                <p><strong className="text-foreground">Ejecución:</strong> trabajar por bloques y reducir distracciones.</p>
+                <p><strong className="text-foreground">Resultado:</strong> menos estrés y mejor rendimiento.</p>
               </div>
             </ContentSection>
 
@@ -257,7 +257,7 @@ export default function HerramientasPage() {
             >
               <p>El trabajo se expande para llenar el tiempo disponible.</p>
               <div className="mt-4 p-4 rounded-xl bg-primary/5 border border-primary/10">
-                <p className="font-semibold text-foreground mb-2">Solucion:</p>
+                <p className="font-semibold text-foreground mb-2">Solución:</p>
                 <ul className="text-sm space-y-1">
                   <li>- Establecer plazos cortos</li>
                   <li>- Dividir tareas</li>
@@ -267,7 +267,7 @@ export default function HerramientasPage() {
             </ContentSection>
 
             <ContentSection 
-              title="Herramientas de gestion" 
+              title="Herramientas de gestión" 
               image="/delegacion.jpg"
               imagePosition="right"
               index={7}
@@ -275,7 +275,7 @@ export default function HerramientasPage() {
               <ul className="space-y-2">
                 <li className="flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-primary" />
-                  Delegacion
+                  Delegación
                 </li>
                 <li className="flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-primary" />
@@ -287,11 +287,11 @@ export default function HerramientasPage() {
                 </li>
                 <li className="flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-primary" />
-                  Gestion del estres
+                  Gestión del estrés
                 </li>
                 <li className="flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-primary" />
-                  Solucion de problemas
+                  Solución de problemas
                 </li>
               </ul>
             </ContentSection>
@@ -302,7 +302,7 @@ export default function HerramientasPage() {
               imagePosition="left"
               index={8}
             >
-              <p className="font-semibold text-foreground mb-3">Caracteristicas clave:</p>
+              <p className="font-semibold text-foreground mb-3">Características clave:</p>
               <ul className="space-y-2 text-sm">
                 <li className="flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-primary" />
@@ -370,17 +370,17 @@ export default function HerramientasPage() {
               <div className={`overflow-hidden transition-all duration-500 ${showRefs ? "max-h-[600px] opacity-100" : "max-h-0 opacity-0"}`}>
                 <Card className="p-8 glow-card text-sm space-y-4">
                   <p className="pl-8 -indent-8">
-                    Guias BibUpo. (s. f.). <em>Planificacion y gestion del tiempo: Herramientas, aplicaciones y software</em>.
+                    Guías BibUpo. (s. f.). <em>Planificación y gestión del tiempo: Herramientas, aplicaciones y software</em>.
                     https://guiasbib.upo.es/planificacion-y-gestiondel-tiempo/herramientas-aplicaciones-y-software
                   </p>
                   <p className="pl-8 -indent-8">
                     33 herramientas de productividad y gestion del tiempo. (s. f.). https://cultumatica.com/herramientasproductividad-gestion-tiempo/
                   </p>
                   <p className="pl-8 -indent-8">
-                    Drucker, P. F. (2007). <em>La gestion eficaz</em> (Ed. revisada). Editorial Sudamericana.
+                    Drucker, P. F. (2007). <em>La gestión eficaz</em> (Ed. revisada). Editorial Sudamericana.
                   </p>
                   <p className="pl-8 -indent-8">
-                    Allen, D. (2015). <em>Organizate con eficacia: Getting Things Done</em> (Ed. actualizada). Ediciones Urano.
+                    Allen, D. (2015). <em>Organízate con eficacia: Getting Things Done</em> (Ed. actualizada). Ediciones Urano.
                   </p>
                   <p className="pl-8 -indent-8">
                     Macan, T. H. (1994). Time management: Test of a process model. <em>Journal of Applied Psychology</em>.
@@ -389,10 +389,10 @@ export default function HerramientasPage() {
                     Claessens, B. J. C., van Eerde, W., Rutte, C. G., & Roe, R. A. (2007). A review of the time management literature. <em>Personnel Review</em>.
                   </p>
                   <p className="pl-8 -indent-8">
-                    Laoyan, S. (2025, febrero 21). Que es el principio de Pareto o la regla 80/20. <em>Asana</em>. https://asana.com/es/resources/pareto-principle-80-20-rule
+                    Laoyan, S. (2025, febrero 21). Qué es el principio de Pareto o la regla 80/20. <em>Asana</em>. https://asana.com/es/resources/pareto-principle-80-20-rule
                   </p>
                   <p className="pl-8 -indent-8">
-                    Ortiz, N. (2025, noviembre 20). Gestion del tiempo en el trabajo: La guia definitiva de tecnicas y estrategias. <em>WorkMeter</em>. https://www.workmeter.com/blog/gestion-deltiempo-trabajo/
+                    Ortiz, N. (2025, noviembre 20). Gestión del tiempo en el trabajo: La guía definitiva de técnicas y estrategias. <em>WorkMeter</em>. https://www.workmeter.com/blog/gestion-deltiempo-trabajo/
                   </p>
                 </Card>
               </div>

@@ -46,7 +46,7 @@ export function FeaturedDestinations() {
           </h2>
 
           <p className="text-lg text-muted-foreground leading-relaxed">
-            El alumno construira un estilo de liderazgo para dirigir organizaciones
+            El alumno construirá un estilo de liderazgo para dirigir organizaciones
             con eficacia.
           </p>
         </div>
@@ -68,7 +68,7 @@ export function FeaturedDestinations() {
               <h3 className="text-xl font-bold">Unidad 1</h3>
             </div>
             <p className="text-muted-foreground leading-relaxed">
-              El alumno administrara eficientemente el tiempo para mejorar el desempeno
+              El alumno administrará eficientemente el tiempo para mejorar el desempeño
               y cumplimiento de objetivos personales y organizacionales.
             </p>
           </Card>
@@ -86,8 +86,8 @@ export function FeaturedDestinations() {
               <h3 className="text-xl font-bold">Unidad 2</h3>
             </div>
             <p className="text-muted-foreground leading-relaxed">
-              El alumno desarrollara habilidades de liderazgo a traves de identificar
-              sus fortalezas y areas de oportunidad para su aplicacion personal y organizacional.
+              El alumno desarrollará habilidades de liderazgo a través de identificar
+              sus fortalezas y áreas de oportunidad para su aplicación personal y organizacional.
             </p>
           </Card>
 
@@ -107,24 +107,24 @@ export function FeaturedDestinations() {
           <div className="relative p-10 md:p-16 text-center">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur text-white text-sm font-medium mb-8">
               <Clock className="w-4 h-4" />
-              Conoce mas
+              Conoce más
             </div>
             
             <h3 className="text-3xl md:text-4xl font-bold mb-6 text-white text-balance">
-              La importancia de la Administracion del Tiempo
+              La importancia de la Administración del Tiempo
             </h3>
 
             <p className="max-w-3xl mx-auto leading-relaxed text-white/90 text-lg">
-              La administracion del tiempo es el recurso mas valioso para el exito personal y profesional.
-              Gestionarlo efectivamente no significa trabajar mas rapido, sino de forma inteligente,
+              La administración del tiempo es el recurso más valioso para el éxito personal y profesional.
+              Gestionarlo efectivamente no significa trabajar más rápido, sino de forma inteligente,
               priorizando lo que aporta valor. Dominar esta habilidad aumenta la productividad,
-              reduce el estres y transforma intenciones en logros tangibles.
+              reduce el estrés y transforma intenciones en logros tangibles.
             </p>
 
             <div className="flex flex-wrap justify-center gap-6 mt-10">
               {[
                 { icon: Target, label: "Mayor productividad" },
-                { icon: Lightbulb, label: "Menos estres" },
+                { icon: Lightbulb, label: "Menos estrés" },
                 { icon: Clock, label: "Logros tangibles" },
               ].map((item, index) => (
                 <div 

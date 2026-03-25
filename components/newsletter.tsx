@@ -50,13 +50,13 @@ export function Newsletter() {
           {/* Frase motivacional */}
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-balance">
             El conocimiento se fortalece con la
-            <span className="block mt-2 text-primary">practica constante</span>
+            <span className="block mt-2 text-primary">práctica constante</span>
           </h2>
 
           {/* Texto */}
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
             Refuerza lo aprendido en clase mediante actividades interactivas
-            y evalua tu progreso dentro de la plataforma.
+            y evalúa tu progreso dentro de la plataforma.
           </p>
 
           {/* Boton */}

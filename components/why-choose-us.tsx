@@ -19,7 +19,7 @@ const features = [
   },
   {
     icon: ClipboardCheck,
-    title: "Ejercicios practicos",
+    title: "Ejercicios prácticos",
     description:
       "Actividades interactivas que refuerzan el aprendizaje y permiten aplicar los conceptos vistos en clase.",
     color: "from-accent/20 to-accent/5",
@@ -29,7 +29,7 @@ const features = [
     icon: BarChart3,
     title: "Seguimiento de progreso",
     description:
-      "Visualiza tu desempeno y puntajes para identificar fortalezas y areas de mejora.",
+      "Visualiza tu desempeño y puntajes para identificar fortalezas y áreas de mejora.",
     color: "from-chart-2/20 to-chart-2/5",
     iconColor: "text-chart-2",
   },
@@ -85,9 +85,9 @@ export function WhyChooseUs() {
           </h2>
 
           <p className="text-lg text-muted-foreground leading-relaxed">
-            Esta aplicacion esta disenada para apoyar tu aprendizaje,
-            mejorar tu organizacion y fortalecer tus habilidades de liderazgo
-            mediante recursos digitales y actividades practicas.
+            Esta aplicación está diseñada para apoyar tu aprendizaje,
+            mejorar tu organización y fortalecer tus habilidades de liderazgo
+            mediante recursos digitales y actividades prácticas.
           </p>
         </div>
 

@@ -129,8 +129,8 @@ export default function ConceptosPage() {
                 mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
               }`}
             >
-              Conceptos Basicos de{" "}
-              <span className="text-primary">Administracion del Tiempo</span>
+              Conceptos Básicos de{" "}
+              <span className="text-primary">Administración del Tiempo</span>
             </h1>
 
             <p 
@@ -138,7 +138,7 @@ export default function ConceptosPage() {
                 mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
               }`}
             >
-              Universidad Tecnologica de Nezahualcoyotl
+              Universidad Tecnológica de Nezahualcóyotl
             </p>
 
             <p 
@@ -146,8 +146,8 @@ export default function ConceptosPage() {
                 mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
               }`}
             >
-              Barrera Gonzalez Angelica Yolotzin | Hernandez Ruiz Luis Enrique |
-              Melgar Angeles Gabriela Sarahi | Mercado Mendez Estefani
+              Barrera González Angélica Yolotzin | Hernández Ruiz Luis Enrique |
+              Melgar Ángeles Gabriela Sarahí | Mercado Méndez Estefani
             </p>
           </div>
         </section>
@@ -157,19 +157,19 @@ export default function ConceptosPage() {
           <div className="max-w-7xl mx-auto px-6 lg:px-8 space-y-20">
 
             <ContentSection 
-              title="Que es la administracion del tiempo?" 
+              title="¿Qué es la administración del tiempo?" 
               image="/time-definition.jpg"
               imagePosition="left"
               index={0}
             >
               <p>
-                La administracion del tiempo es el proceso de organizar y utilizar el tiempo de manera adecuada para cumplir actividades, responsabilidades y objetivos de forma eficiente, evitando el desperdicio de tiempo.
+                La administración del tiempo es el proceso de organizar y utilizar el tiempo de manera adecuada para cumplir actividades, responsabilidades y objetivos de forma eficiente, evitando el desperdicio de tiempo.
               </p>
               <ul className="space-y-2 mt-4">
-                <li><strong className="text-foreground">Objetivos:</strong> Definir que se quiere lograr a corto, mediano y largo plazo</li>
-                <li><strong className="text-foreground">Organizacion:</strong> Ordenar actividades usando agendas, horarios o listas.</li>
-                <li><strong className="text-foreground">Prioridades:</strong> Identificar que tareas son mas importantes o urgentes.</li>
-                <li><strong className="text-foreground">Beneficios:</strong> Mayor productividad, mejor rendimiento y menos estres.</li>
+                <li><strong className="text-foreground">Objetivos:</strong> Definir qué se quiere lograr a corto, mediano y largo plazo.</li>
+                <li><strong className="text-foreground">Organización:</strong> Ordenar actividades usando agendas, horarios o listas.</li>
+                <li><strong className="text-foreground">Prioridades:</strong> Identificar qué tareas son más importantes o urgentes.</li>
+                <li><strong className="text-foreground">Beneficios:</strong> Mayor productividad, mejor rendimiento y menos estrés.</li>
               </ul>
             </ContentSection>
 
@@ -186,11 +186,11 @@ export default function ConceptosPage() {
                 </li>
                 <li className="flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-primary" />
-                  Mejor rendimiento academico
+                  Mejor rendimiento académico
                 </li>
                 <li className="flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-primary" />
-                  Menor estres
+                  Menor estrés
                 </li>
                 <li className="flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-primary" />
@@ -206,14 +206,14 @@ export default function ConceptosPage() {
               index={2}
             >
               <p>
-                Es la capacidad de realizar tareas o actividades de la mejor manera posible, utilizando la menor cantidad de recursos (como tiempo, energia o dinero). Se centra en hacer las cosas correctamente y de manera rapida.
+                Es la capacidad de realizar tareas o actividades de la mejor manera posible, utilizando la menor cantidad de recursos (como tiempo, energía o dinero). Se centra en hacer las cosas correctamente y de manera rápida.
               </p>
               <div className="space-y-3 mt-4">
                 <p><strong className="text-foreground">Identifica lo que tienes que hacer</strong> - Por ejemplo: tareas, estudiar y trabajos.</p>
-                <p><strong className="text-foreground">Ordena las actividades por importancia</strong> - Primero lo urgente y lo mas importante.</p>
-                <p><strong className="text-foreground">Asigna un tiempo a cada actividad</strong> - Decide cuanto tiempo dedicaras a cada una.</p>
-                <p><strong className="text-foreground">Evita distracciones</strong> - Guarda el celular y concentrate solo en una tarea.</p>
-                <p><strong className="text-foreground">Cumple la actividad y revisa el resultado</strong> - Asi terminas a tiempo y con buena calidad.</p>
+                <p><strong className="text-foreground">Ordena las actividades por importancia</strong> - Primero lo urgente y lo más importante.</p>
+                <p><strong className="text-foreground">Asigna un tiempo a cada actividad</strong> - Decide cuánto tiempo dedicarás a cada una.</p>
+                <p><strong className="text-foreground">Evita distracciones</strong> - Guarda el celular y concéntrate solo en una tarea.</p>
+                <p><strong className="text-foreground">Cumple la actividad y revisa el resultado</strong> - Así terminas a tiempo y con buena calidad.</p>
               </div>
             </ContentSection>
 
@@ -224,7 +224,7 @@ export default function ConceptosPage() {
               index={3}
             >
               <p>
-                Es la capacidad de alcanzar los resultados deseados o cumplir los objetivos. Se enfoca en hacer las cosas correctas, es decir, realizar actividades que realmente conduzcan a la consecucion de las metas.
+                Es la capacidad de alcanzar los resultados deseados o cumplir los objetivos. Se enfoca en hacer las cosas correctas, es decir, realizar actividades que realmente conduzcan a la consecución de las metas.
               </p>
               <div className="mt-4 p-4 rounded-xl bg-primary/5 border border-primary/10">
                 <p className="font-semibold text-foreground mb-2">Ejemplo</p>
@@ -243,9 +243,9 @@ export default function ConceptosPage() {
                   <p className="font-bold text-foreground mb-2">Urgente</p>
                   <p>Es todo aquello que:</p>
                   <ul className="mt-2 space-y-1 text-sm">
-                    <li>- Requiere atencion inmediata</li>
+                    <li>- Requiere atención inmediata</li>
                     <li>- Tiene un plazo cercano</li>
-                    <li>- Genera presion</li>
+                    <li>- Genera presión</li>
                   </ul>
                 </div>
                 <div className="p-4 rounded-xl bg-primary/5 border border-primary/10">
@@ -267,7 +267,7 @@ export default function ConceptosPage() {
               index={5}
             >
               <p>
-                Creencia o idea aceptada socialmente como verdadera, carece de fundamento real o comprobacion objetiva.
+                Creencia o idea aceptada socialmente como verdadera que carece de fundamento real o comprobación objetiva.
               </p>
               <div className="space-y-4 mt-4">
                 <div className="p-3 rounded-lg bg-muted/50">
@@ -286,22 +286,22 @@ export default function ConceptosPage() {
             </ContentSection>
 
             <ContentSection 
-              title="Planeacion del tiempo" 
+              title="Planeación del tiempo" 
               image="/planeacion.jpg"
               imagePosition="left"
               index={6}
             >
               <p>
-                La planeacion del tiempo es el proceso de organizar las actividades antes de realizarlas para aprovechar mejor cada dia; consiste en establecer objetivos claros, definir prioridades y asignar tiempos a cada tarea.
+                La planeación del tiempo es el proceso de organizar las actividades antes de realizarlas para aprovechar mejor cada día; consiste en establecer objetivos claros, definir prioridades y asignar tiempos a cada tarea.
               </p>
               <p className="mt-4">
-                Planear permite evitar la improvisacion y reducir el estres al tener mayor control de las actividades ademas ayuda a cumplir responsabilidades de forma ordenada. Una buena planeacion mejora la productividad y el logro de metas.
+                Planear permite evitar la improvisación y reducir el estrés al tener mayor control de las actividades, además ayuda a cumplir responsabilidades de forma ordenada. Una buena planeación mejora la productividad y el logro de metas.
               </p>
               <div className="mt-4 p-4 rounded-xl bg-primary/5 border border-primary/10">
-                <p className="font-semibold text-foreground mb-2">Herramientas de Administracion del Tiempo</p>
+                <p className="font-semibold text-foreground mb-2">Herramientas de Administración del Tiempo</p>
                 <ul className="space-y-1 text-sm">
                   <li>- Agenda ejecutiva</li>
-                  <li>- Matriz de administracion del tiempo</li>
+                  <li>- Matriz de administración del tiempo</li>
                   <li>- Los cuatro cuadrantes de la matriz del tiempo</li>
                 </ul>
               </div>
@@ -321,7 +321,7 @@ export default function ConceptosPage() {
                   className="w-full h-full"
                   src="https://www.youtube.com/embed/9pPd7S8R96c"
                   allowFullScreen
-                  title="Video explicativo sobre administracion del tiempo"
+                  title="Video explicativo sobre administración del tiempo"
                 />
               </div>
             </section>
@@ -342,10 +342,10 @@ export default function ConceptosPage() {
               <div className={`overflow-hidden transition-all duration-500 ${showRefs ? "max-h-[600px] opacity-100" : "max-h-0 opacity-0"}`}>
                 <Card className="p-8 glow-card text-sm space-y-4">
                   <p className="pl-8 -indent-8">
-                    Allen, D. (2015). <em>Organizate con eficacia (Getting Things Done)</em>. Urano.
+                    Allen, D. (2015). <em>Organízate con eficacia (Getting Things Done)</em>. Urano.
                   </p>
                   <p className="pl-8 -indent-8">
-                    Covey, S. R. (2013). <em>Los 7 habitos de la gente altamente efectiva</em>. Paidos. https://www.planetadelibros.com
+                    Covey, S. R. (2013). <em>Los 7 hábitos de la gente altamente efectiva</em>. Paidós. https://www.planetadelibros.com
                   </p>
                   <p className="pl-8 -indent-8">
                     Drucker, P. F. (2002). <em>La efectividad ejecutiva</em>. HarperCollins. https://www.harpercollins.com
@@ -354,16 +354,16 @@ export default function ConceptosPage() {
                     Drucker, P. F. (2004). <em>La efectividad ejecutiva</em>. HarperCollins.
                   </p>
                   <p className="pl-8 -indent-8">
-                    Lago, S. (2010). <em>Gestion eficaz del tiempo</em>. Ediciones Diaz de Santos.
+                    Lago, S. (2010). <em>Gestión eficaz del tiempo</em>. Ediciones Díaz de Santos.
                   </p>
                   <p className="pl-8 -indent-8">
                     Macan, T. H. (1994). Time management: Test of a process model. <em>Journal of Applied Psychology, 79</em>(3), 381-391.
                   </p>
                   <p className="pl-8 -indent-8">
-                    ProfeSaw. (2024, 14 de septiembre). Administracion del tiempo. <em>LASH UTRNG</em>. Recuperado el 17 de enero de 2026, de https://lash.utrng.edu.mx/?p=3582
+                    ProfeSaw. (2024, 14 de septiembre). Administración del tiempo. <em>LASH UTRNG</em>. Recuperado el 17 de enero de 2026, de https://lash.utrng.edu.mx/?p=3582
                   </p>
                   <p className="pl-8 -indent-8">
-                    Urrutia, S. M. (2013). Elementos del planificador - Administracion del tiempo [Presentacion]. <em>SlideShare</em>. https://es.slideshare.net/slideshow/admon-tiempo-elementos-planificador/27007636
+                    Urrutia, S. M. (2013). Elementos del planificador - Administración del tiempo [Presentación]. <em>SlideShare</em>. https://es.slideshare.net/slideshow/admon-tiempo-elementos-planificador/27007636
                   </p>
                 </Card>
               </div>

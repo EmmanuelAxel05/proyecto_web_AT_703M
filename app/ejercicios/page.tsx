@@ -72,7 +72,7 @@ export default function EjerciciosPage() {
       },
       (error) => {
         console.error(error)
-        setError("Error al subir el archivo. Intenta de nuevo.")
+        setError("Error al subir el archivo. Inténtalo de nuevo.")
         setLoading(false)
         setCurrentActivity(null)
       },
@@ -131,7 +131,7 @@ export default function EjerciciosPage() {
               Apartado de <span className="text-primary">Ejercicios</span>
             </h1>
             <p className="text-muted-foreground max-w-xl mx-auto">
-              Sube tus actividades completadas para evaluacion. Asegurate de llenar todos los campos correctamente.
+              Sube tus actividades completadas para evaluación. Asegúrate de llenar todos los campos correctamente.
             </p>
           </div>
 
@@ -187,7 +187,7 @@ export default function EjerciciosPage() {
                 </div>
                 <div>
                   <h2 className="text-xl font-bold">Actividad 2</h2>
-                  <p className="text-sm text-muted-foreground">Evaluacion del Lider</p>
+                  <p className="text-sm text-muted-foreground">Evaluación del Líder</p>
                 </div>
               </div>
 
@@ -264,7 +264,7 @@ export default function EjerciciosPage() {
                 </div>
                 <div>
                   <h2 className="text-xl font-bold">Actividad 3</h2>
-                  <p className="text-sm text-muted-foreground">Evaluacion Interequipos</p>
+                  <p className="text-sm text-muted-foreground">Evaluación Interequipos</p>
                 </div>
               </div>
 

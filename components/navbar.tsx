@@ -6,13 +6,13 @@ import { Menu, X, ChevronDown, BookOpen, Wrench, Heart, Brain, Users } from "luc
 import Link from "next/link"
 
 const unidad1Links = [
-  { href: "/unidad1/conceptos", label: "Conceptos basicos", icon: BookOpen },
+  { href: "/unidad1/conceptos", label: "Conceptos básicos", icon: BookOpen },
   { href: "/unidad1/herramientas", label: "Herramientas", icon: Wrench },
 ]
 
 const unidad2Links = [
   { href: "/unidad2/autoestima", label: "Autoestima", icon: Heart },
-  { href: "/unidad2/motivacion", label: "Motivacion e inteligencia emocional", icon: Brain },
+  { href: "/unidad2/motivacion", label: "Motivación e inteligencia emocional", icon: Brain },
   { href: "/unidad2/liderazgo", label: "Liderazgo transformacional", icon: Users },
 ]
 
@@ -70,7 +70,7 @@ export function Navbar() {
                   isScrolled ? "text-white" : "text-foreground"
                 }`}
               >
-                Universidad Tecnologica de Nezahualcoyotl
+                Universidad Tecnológica de Nezahualcóyotl
               </p>
 
               <p
@@ -78,7 +78,7 @@ export function Navbar() {
                   isScrolled ? "text-white/80" : "text-muted-foreground"
                 }`}
               >
-                Administracion del Tiempo
+                Administración del Tiempo
               </p>
             </div>
           </Link>
@@ -172,7 +172,7 @@ export function Navbar() {
                 : "text-foreground hover:bg-muted"
             }`}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-label={isMobileMenuOpen ? "Cerrar menu" : "Abrir menu"}
+            aria-label={isMobileMenuOpen ? "Cerrar menú" : "Abrir menú"}
           >
             <div className="relative w-6 h-6">
               <Menu 
